@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -724,119 +725,6 @@ h3 {
     font-size: 40px;
 }
 
-/* EDITOR */
-
-.editor-button {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 150;
-    width: 48px;
-    height: 48px;
-    color: var(--text);
-    background: linear-gradient(135deg, #bd83bd, #8872c7);
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.editor-button:hover {
-    transform: rotate(45deg);
-}
-
-.editor-panel {
-    position: fixed;
-    top: 0;
-    right: -420px;
-    z-index: 200;
-    width: min(390px, 100%);
-    height: 100vh;
-    overflow-y: auto;
-    padding: 25px;
-    background: #1b1421;
-    border-left: 1px solid var(--border);
-    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.3);
-    transition: right 0.4s ease;
-}
-
-.editor-panel.open {
-    right: 0;
-}
-
-.editor-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.editor-header h3 {
-    font-size: 22px;
-}
-
-.editor-header button {
-    color: var(--text);
-    background: transparent;
-    border: none;
-    font-size: 28px;
-}
-
-.editor-panel label {
-    display: block;
-    margin: 18px 0 8px;
-    color: var(--pink);
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.editor-panel input,
-.editor-panel textarea {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    outline: none;
-    font-size: 12px;
-}
-
-.editor-panel input:focus,
-.editor-panel textarea:focus {
-    border-color: var(--pink);
-}
-
-.editor-panel textarea {
-    resize: vertical;
-    line-height: 1.6;
-}
-
-.editor-panel input[type="file"] {
-    padding: 9px;
-    font-size: 10px;
-}
-
-.save-button {
-    width: 100%;
-    margin-top: 25px;
-    padding: 14px;
-    color: #241426;
-    background: linear-gradient(120deg, #e8a5d1, #c9a7f5);
-    border: none;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 700;
-    transition: 0.3s ease;
-}
-
-.save-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(232, 165, 209, 0.15);
-}
-
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
@@ -971,11 +859,6 @@ h3 {
         flex-direction: column;
         gap: 12px;
         text-align: center;
-    }
-
-    .editor-button {
-        right: 18px;
-        bottom: 18px;
     }
 }
 

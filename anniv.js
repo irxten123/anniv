@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // ELEMENT HTML
@@ -18,31 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const giftHint = document.getElementById("giftHint");
     const typedLetter = document.getElementById("typedLetter");
     const typingCursor = document.getElementById("typingCursor");
-
-    const editorButton = document.getElementById("editorButton");
-    const editorPanel = document.getElementById("editorPanel");
-    const closeEditor = document.getElementById("closeEditor");
-    const saveEditor = document.getElementById("saveEditor");
-
-    const inputName = document.getElementById("inputName");
-    const inputDescription = document.getElementById("inputDescription");
-    const inputQuote = document.getElementById("inputQuote");
-    const inputLetter = document.getElementById("inputLetter");
-
-    const heroDescription = document.getElementById("heroDescription");
-    const quoteText = document.getElementById("quoteText");
-    const letterName = document.getElementById("letterName");
-
-    const coverImage = document.getElementById("coverImage");
-
-    const coverImageInput = document.getElementById("coverImageInput");
-    const memoryImage1Input = document.getElementById("memoryImage1Input");
-    const memoryImage2Input = document.getElementById("memoryImage2Input");
-    const memoryImage3Input = document.getElementById("memoryImage3Input");
-
-    const memory1 = document.getElementById("memory1");
-    const memory2 = document.getElementById("memory2");
-    const memory3 = document.getElementById("memory3");
 
 
     // DATA SURAT
@@ -277,125 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // MEMBUKA EDITOR
-    if (editorButton && editorPanel) {
-
-        editorButton.addEventListener("click", function () {
-
-            editorPanel.classList.add("open");
-
-        });
-
-    }
-
-
-    // MENUTUP EDITOR
-    if (closeEditor && editorPanel) {
-
-        closeEditor.addEventListener("click", function () {
-
-            editorPanel.classList.remove("open");
-
-        });
-
-    }
-
-
-    // PREVIEW FOTO
-    function previewImage(input, imageElement) {
-
-        if (!input || !imageElement) {
-            return;
-        }
-
-        input.addEventListener("change", function () {
-
-            const file = input.files[0];
-
-            if (file && file.type.startsWith("image/")) {
-
-                const reader = new FileReader();
-
-                reader.onload = function (event) {
-
-                    imageElement.src = event.target.result;
-
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
-    }
-
-
-    // MENGHUBUNGKAN INPUT FOTO
-    previewImage(coverImageInput, coverImage);
-
-    previewImage(memoryImage1Input, memory1);
-
-    previewImage(memoryImage2Input, memory2);
-
-    previewImage(memoryImage3Input, memory3);
-
-
-    // MENERAPKAN PERUBAHAN EDITOR
-    if (saveEditor) {
-
-        saveEditor.addEventListener("click", function () {
-
-            const name = inputName.value.trim();
-
-            const description = inputDescription.value.trim();
-
-            const quote = inputQuote.value.trim();
-
-            const letter = inputLetter.value.trim();
-
-
-            // MENGUBAH DESKRIPSI
-            if (description !== "" && heroDescription) {
-
-                heroDescription.textContent = description;
-            }
-
-
-            // MENGUBAH QUOTE
-            if (quote !== "" && quoteText) {
-
-                quoteText.textContent = quote;
-            }
-
-
-            // MENGUBAH NAMA
-            if (name !== "" && letterName) {
-
-                letterName.textContent = name;
-            }
-
-            // MENGUBAH ISI SURAT
-            if (letter !== "") {
-
-                letterContent = letter;
-
-                if (isGiftOpen) {
-
-                    startTyping();
-
-                }
-            }
-
-            // MENUTUP EDITOR
-            if (editorPanel) {
-
-                editorPanel.classList.remove("open");
-
-            }
-
-            alert("Perubahan berhasil diterapkan!");
-        });
-    }
-
-
     // MENUTUP POPUP DENGAN TOMBOL ESC
     document.addEventListener("keydown", function (event) {
 
@@ -403,11 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             closePhotoPreview();
 
-            if (editorPanel) {
-
-                editorPanel.classList.remove("open");
-
-            }
         }
+
     });
+
 });
